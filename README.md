@@ -2,7 +2,7 @@
 
 This repo is my personal configuration for using grafana
 on my homelab.
-Prometheus is an open-source visualisation and analytics software.
+Grafana is an open-source visualisation and analytics software.
 The
 [grafana docs](https://grafana.com/docs/grafana/latest/fundamentals/)
 are pretty good and can explain a bit more about what that
