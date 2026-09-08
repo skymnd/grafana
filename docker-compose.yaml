@@ -1,6 +1,6 @@
 services:
   grafana:
-    image: grafana/grafana-enterprise
+    image: grafana/grafana-enterprise:13.0.8@sha256:f8ac96d33867308cde735e75b943f783867f3e8c7cf2a0a2eb06b2f771ec0b57
     container_name: grafana
     restart: unless-stopped
     env_file: .env
