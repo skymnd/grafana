@@ -4,9 +4,21 @@ services:
     container_name: grafana
     restart: unless-stopped
     env_file: .env
-    ports:
-      - '3000:3000'
+    networks:
+      - proxy
     volumes:
-      - 'grafana_storage:/var/lib/grafana'
+      - grafana_storage:/var/lib/grafana
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.grafana-router.rule=Host(`grafana.${HOMELAB_DOMAIN}`)"
+      - "traefik.http.routers.grafana-router.entrypoints=websecure"
+      - "traefik.http.routers.grafana-router.tls.certresolver=le"
+      - "traefik.http.services.grafana.loadbalancer.server.port=3000"
+      - "traefik.http.routers.grafana-router.service=grafana"
+
 volumes:
   grafana_storage: {}
+
+networks:
+  proxy:
+    external: true

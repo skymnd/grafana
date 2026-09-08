@@ -15,7 +15,7 @@ SSO via Authentik.
 
 ## Dashboards
 
-I currently have no custom dashboards, just imported ones:
+I mostly don't have any custom dashboards, just imported ones:
 - [Authentik](https://grafana.com/grafana/dashboards/14837-authentik/)
 - [Traefik](https://grafana.com/grafana/dashboards/17346-traefik-official-standalone-dashboard/)
 - [Prometheus](https://grafana.com/grafana/dashboards/19268-prometheus/)
@@ -23,3 +23,8 @@ I currently have no custom dashboards, just imported ones:
 - [Crowdsec](https://github.com/crowdsecurity/grafana-dashboards)
 
 Perhaps in the future I will store the json for custom dashboards here.
+
+## Access
+
+This has been set up to be accessed from behind Traefik.
+To access without Traefik, port `3000:3000` will need to be exposed.
